@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Music Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Mood Music Recommender</h1>
+            <p>Tell us how you're feeling, and we'll find the perfect songs for you!</p>
+        </header>
+
+        <main>
+            <div class="mood-selector">
+                <h2>How are you feeling today?</h2>
+                <div class="mood-buttons">
+                    <button class="mood-btn" data-mood="happy">😊 Happy</button>
+                    <button class="mood-btn" data-mood="sad">😢 Sad</button>
+                    <button class="mood-btn" data-mood="energetic">⚡ Energetic</button>
+                    <button class="mood-btn" data-mood="chill">😌 Chill</button>
+                    <button class="mood-btn" data-mood="romantic">💕 Romantic</button>
+                    <button class="mood-btn" data-mood="angry">😠 Angry</button>
+                </div>
+                
+                <div class="custom-mood">
+                    <input type="text" id="customMood" placeholder="Or type your own mood...">
+                    <button id="customMoodBtn">Get Recommendations</button>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Finding perfect songs for your mood...</p>
+            </div>
+
+            <div id="results" class="results hidden">
+                <h2>Songs for your <span id="currentMood"></span> mood:</h2>
+                <div id="songList" class="song-list"></div>
+            </div>
+
+            <div id="error" class="error hidden">
+                <p>Oops! Something went wrong. Please try again.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
