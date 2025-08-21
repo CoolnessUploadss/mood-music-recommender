@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.mood-selector {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.mood-selector h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.mood-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.mood-btn {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.mood-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.mood-btn:active {
+    transform: translateY(-1px);
+}
+
+.custom-mood {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#customMood {
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 1rem;
+    min-width: 200px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#customMood:focus {
+    border-color: #667eea;
+}
+
+#customMoodBtn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#customMoodBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.results {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.results h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+#currentMood {
+    color: #667eea;
+    font-weight: 700;
+}
+
+.song-list {
+    display: grid;
+    gap: 20px;
+}
+
+.song-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border-left: 5px solid #667eea;
+}
+
+.song-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.song-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.song-info {
+    flex: 1;
+}
+
+.song-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.song-artist {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.song-album {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.song-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.spotify-link {
+    padding: 8px 16px;
+    background: #1DB954;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.spotify-link:hover {
+    background: #1ed760;
+    transform: scale(1.05);
+}
+
+.preview-btn {
+    padding: 8px 16px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.preview-btn:hover {
+    background: #5a6fd8;
+}
+
+.preview-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.error {
+    background: #ff6b6b;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .mood-selector {
+        padding: 20px;
+    }
+    
+    .mood-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .custom-mood {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #customMood {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    .song-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .song-image {
+        margin: 0 0 15px 0;
+    }
+    
+    .song-actions {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
